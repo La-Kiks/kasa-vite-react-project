@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import HousingCard from "../components/HousingCard/HousingCard";
+import HousingCard from "../../components/HousingCard/HousingCard";
+import "./Home.scss";
 
 function Home() {
   const [housings, setHousings] = useState([]);
@@ -12,9 +13,12 @@ function Home() {
 
   return (
     <div className="home">
-      {housings.map((housing) => (
-        <HousingCard key={housing.id} housing={housing} />
-      ))}
+      <div className="home_banner"></div>
+      <div className="home__grid">
+        {housings.map((housing) => (
+          <HousingCard key={housing.id} housing={housing} />
+        ))}
+      </div>
     </div>
   );
 }

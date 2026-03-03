@@ -1,0 +1,25 @@
+@use "../../styles/variables" as *;
+
+.footer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $dark-color;
+  color: $light-color;
+
+  &__logo {
+    width: auto;
+  }
+
+  &__content {
+    color: $light-color;
+  }
+}
+
+@media (max-width: $mobile) {
+  .footer {
+  }
+}

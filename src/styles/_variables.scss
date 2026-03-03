@@ -1,5 +1,7 @@
 $primary-color: #ff6060;
-$black-color: #000;
+$dark-color: #000;
+$light-color: #fff;
+
 $large-border-radius: 25px;
 $default-border-radius: 10px;
 
@@ -11,6 +13,8 @@ $large-font-size: 36px;
 $default-font-size: 24px;
 $small-font-size: 18px;
 $xs-font-size: 14px;
+
+$mobile: 375px;
 
 $mobile-xl-font-size: 24px;
 $mobile-large-font-size: 18px;
