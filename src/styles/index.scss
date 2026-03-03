@@ -1,22 +1,19 @@
 @use "./variables" as *;
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+body {
+  font-family: "Montserrat", sans-serif;
   line-height: 1.43;
   font-weight: $default-weight;
 
   color: $dark-color;
   background-color: $light-color;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0;
-  margin: 0;
+  margin: auto;
   width: 100%;
+  height: auto;
 }
