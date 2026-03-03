@@ -1,1 +1,48 @@
 @use "../../styles/variables" as *;
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin: auto clamp(1rem, 3vw, 50px) auto clamp(1rem, 3vw, 50px);
+
+  &__logo {
+    width: auto;
+    max-width: clamp(145px, 50vw, 210px);
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    gap: clamp(1rem, 3vw, 57px);
+    font-size: clamp($mobile-small-font-size, 3vw, $default-font-size);
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    width: auto;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .navbar {
+    margin: auto 27px auto 27px;
+
+    &__logo {
+      max-width: 145px;
+    }
+
+    &__links {
+      gap: 26px;
+      font-size: $mobile-small-font-size;
+    }
+  }
+}

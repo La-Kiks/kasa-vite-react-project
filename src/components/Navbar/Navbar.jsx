@@ -1,16 +1,30 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./Navbar.scss";
+import kasaLogoLarge from "../../assets/KASA-Logo-210-Salmon.svg";
+import kasaLogoMobile from "../../assets/KASA-Logo-145-Salmon.svg";
 
 function Navbar() {
   return (
     <div className="navbar">
-      <h1>Logo</h1>
+      <img
+        className="navbar__logo"
+        src={kasaLogoLarge}
+        srcSet={`
+          ${kasaLogoMobile} 145w,
+          ${kasaLogoLarge} 210w
+        `}
+        sizes="(max-width: 375px) 100vw, 210px"
+        width="210px"
+        height="68px"
+        alt="Kasa Logo salmon-color"
+      />
       <div className="navbar__links">
-        <Link to={"/"}>
-          <p className="navbar__link">Accueil</p>
-        </Link>
-        <Link to={"/about"}>
-          <p className="navbar__link">A propos</p>
-        </Link>
+        <NavLink to="/" end className="navbar__link">
+          ACCUEIL
+        </NavLink>
+        <NavLink to="/about" className="navbar__link">
+          A PROPOS
+        </NavLink>
       </div>
     </div>
   );
