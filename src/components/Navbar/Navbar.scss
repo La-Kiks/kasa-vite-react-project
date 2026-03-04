@@ -37,12 +37,12 @@
     margin: auto 27px auto 27px;
 
     &__logo {
-      max-width: 145px;
+      max-width: clamp(100px, 39vw, 145px);
     }
 
     &__links {
       gap: 26px;
-      font-size: $mobile-small-font-size;
+      font-size: clamp($mobile-xs-font-size, 3.5vw, $mobile-small-font-size);
     }
   }
 }

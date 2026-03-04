@@ -1,1 +1,54 @@
 @use "../../styles/variables" as *;
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  color: $primary-color;
+  width: 100%;
+  height: 66vh;
+
+  &__title {
+    margin: inherit;
+    font-weight: $bold-weight;
+    font-size: clamp(96px, 45vw, 288px);
+    line-height: clamp(99px, 45vw, 263px);
+    max-width: 597px;
+    width: 100%;
+  }
+
+  &__subtitle {
+    margin: inherit;
+    font-weight: $default-weight;
+    font-size: $large-font-size;
+  }
+
+  &__link {
+    margin: inherit;
+    color: $dark-color;
+    text-decoration: underline;
+    font-weight: $default-weight;
+    font-size: $small-font-size;
+  }
+}
+
+@media (max-width: $mobile) {
+  .notfound {
+    &__title {
+      font-size: 96px;
+      line-height: 99px;
+      max-width: 198px;
+    }
+
+    &__subtitle {
+      font-size: $mobile-large-font-size;
+    }
+
+    &__link {
+      font-size: $mobile-default-font-size;
+    }
+  }
+}

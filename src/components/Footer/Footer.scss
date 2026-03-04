@@ -7,10 +7,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-height: 209px;
+
   background-color: $dark-color;
   color: $light-color;
   margin-top: auto;
   margin-bottom: 0;
+
   &__logo {
     width: auto;
     margin: 60px 0 40px 0;
