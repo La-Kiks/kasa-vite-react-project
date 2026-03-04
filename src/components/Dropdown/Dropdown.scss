@@ -1,0 +1,45 @@
+@use "../../styles/variables" as *;
+
+.dropdown {
+  width: 100%;
+
+  &__header {
+    width: 100%;
+    background: $primary-color;
+    color: $light-color;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: $default-font-size;
+    font-weight: $default-weight;
+  }
+
+  &__arrow {
+    transition: transform 0.3s ease;
+
+    &__open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    background: $background-color;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 1rem;
+    border-radius: 0 0 5px 5px;
+
+    transition:
+      max-height 0.4s ease,
+      padding 0.3s ease;
+  }
+
+  &__content.open {
+    max-height: 500px;
+    padding: 1rem;
+  }
+}
