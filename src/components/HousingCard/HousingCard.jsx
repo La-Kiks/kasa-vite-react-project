@@ -4,9 +4,13 @@ import "./HousingCard.scss";
 function HousingCard({ housing }) {
   return (
     <Link to={`/housing/${housing.id}`} className="housing-card">
-      <div className="housing-card__content">
-        <h2 className="housing-card__title">{housing.title}</h2>
-      </div>
+      <img
+        src={housing.cover}
+        alt={housing.title}
+        className="housing-card__image"
+      />
+      <div className="housing-card__overlay"></div>
+      <h2 className="housing-card__title">{housing.title}</h2>
     </Link>
   );
 }
