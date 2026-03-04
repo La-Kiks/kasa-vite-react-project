@@ -1,14 +1,57 @@
 @use "../../styles/variables" as *;
 
 .home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
   box-sizing: border-box;
   padding: 2rem;
   width: 100%;
+
+  &__banner {
+    position: relative;
+    width: 100%;
+    max-width: 1240px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 223px;
+      object-fit: cover;
+      border-radius: 25px;
+      filter: brightness(40%) drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    &__title {
+      position: absolute;
+      width: 100%;
+      max-width: inherit;
+      margin: auto;
+      box-sizing: border-box;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $light-color;
+      text-align: center;
+      font-size: $xl-font-size;
+      font-weight: $bold-weight;
+
+      text-shadow:
+        0 0 1px #000,
+        0 0 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     overflow: scroll;
     gap: 2rem;
+    max-width: 1240px;
+    background-color: $background-color;
   }
 }
