@@ -32,6 +32,8 @@
     max-height: 0;
     padding: 0 1rem;
     border-radius: 0 0 5px 5px;
+    font-weight: $light-weight;
+    font-size: $small-font-size;
 
     transition:
       max-height 0.4s ease,
@@ -41,5 +43,17 @@
   &__content.open {
     max-height: 500px;
     padding: 1rem;
+  }
+}
+
+@media (max-width: $mobile) {
+  .dropdown {
+    &__header {
+      font-size: 13px;
+    }
+
+    &__content {
+      font-size: $mobile-small-font-size;
+    }
   }
 }

@@ -1,0 +1,12 @@
+@use "../../styles/variables" as *;
+
+.rating {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+
+  &__star {
+    width: 24px;
+    height: 24px;
+  }
+}

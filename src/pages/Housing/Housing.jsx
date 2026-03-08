@@ -2,6 +2,9 @@ import { useParams, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Carousel from "../../components/Carousel/Carousel";
+import Tag from "../../components/Tag/Tag";
+import Host from "../../components/Host/Host";
+import Rating from "../../components/Rating/Rating";
 import "./Housing.scss";
 
 function Housing() {
@@ -39,9 +42,8 @@ function Housing() {
 
   return (
     <div className="housing">
-      <Carousel className="housing__carousel" pictures={housing.pictures} />
+      <Carousel pictures={housing.pictures} />
 
-      {/* TITLE + HOST */}
       <div className="housing__header">
         <div className="housing__info">
           <h1>{housing.title}</h1>
@@ -49,40 +51,25 @@ function Housing() {
 
           <div className="housing__tags">
             {housing.tags.map((tag, index) => (
-              <span key={index} className="housing__tag">
-                {tag}
-              </span>
+              <Tag key={index}>{tag}</Tag>
             ))}
           </div>
         </div>
 
         <div className="housing__host">
-          <div className="housing__host-info">
-            <span>{housing.host.name}</span>
-            <img src={housing.host.picture} alt={housing.host.name} />
-          </div>
-
-          {/* RATING */}
-          <div className="housing__rating">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span key={star}>{star <= housing.rating ? "★" : "☆"}</span>
-            ))}
-          </div>
+          <Host host={housing.host} />
+          <Rating rating={Number(housing.rating)} />
         </div>
       </div>
 
-      {/* DROPDOWNS */}
       <div className="housing__dropdowns">
         <Dropdown title="Description">
           <p>{housing.description}</p>
         </Dropdown>
-
         <Dropdown title="Équipements">
-          <ul>
-            {housing.equipments.map((equip, index) => (
-              <li key={index}>{equip}</li>
-            ))}
-          </ul>
+          {housing.equipments.map((equip, index) => (
+            <div key={index}>{equip}</div>
+          ))}
         </Dropdown>
       </div>
     </div>
