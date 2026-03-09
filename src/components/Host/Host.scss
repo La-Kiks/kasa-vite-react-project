@@ -11,14 +11,20 @@
   }
 
   &__name {
-    color: #ff6060;
+    color: $primary-color;
     text-align: right;
-    font-size: 14px;
+    font-size: clamp($mobile-small-font-size, 4vw, $small-font-size);
+    font-weight: $default-weight;
   }
 
   &__picture {
-    width: 50px;
-    height: 50px;
+    width: clamp(32px, 10vw, 64px);
+    height: clamp(32px, 10vw, 64px);
     border-radius: 50%;
+  }
+}
+
+@media (max-width: $mobile) {
+  .host {
   }
 }

@@ -46,8 +46,10 @@ function Housing() {
 
       <div className="housing__header">
         <div className="housing__info">
-          <h1>{housing.title}</h1>
-          <p className="housing__location">{housing.location}</p>
+          <div className="housing__title-group">
+            <h1 className="housing__title">{housing.title}</h1>
+            <p className="housing__location">{housing.location}</p>
+          </div>
 
           <div className="housing__tags">
             {housing.tags.map((tag, index) => (

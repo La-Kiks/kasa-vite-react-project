@@ -6,7 +6,7 @@
   justify-content: flex-end;
 
   &__star {
-    width: 24px;
-    height: 24px;
+    width: clamp(13px, 4vw, 24px);
+    height: clamp(13px, 4vw, 24px);
   }
 }

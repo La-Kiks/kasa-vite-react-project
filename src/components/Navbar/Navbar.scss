@@ -9,7 +9,8 @@
   max-width: 1240px;
   box-sizing: border-box;
   padding: clamp(0.5rem, 3vw, 2rem);
-  margin: auto clamp(1rem, 3vw, 50px) auto clamp(1rem, 3vw, 50px);
+  margin: clamp(1rem, 3vw, 50px) clamp(1rem, 3vw, 50px) auto
+    clamp(1rem, 3vw, 50px);
 
   &__logo {
     width: auto;
@@ -37,7 +38,7 @@
 
 @media (max-width: $mobile) {
   .navbar {
-    margin: auto 27px auto 27px;
+    margin: 0 27px auto 27px;
 
     &__logo {
       max-width: clamp(100px, 39vw, 145px);
