@@ -5,7 +5,7 @@ import "./About.scss";
 function About() {
   return (
     <div className="about">
-      <img src={bannerImg} alt="banner" />
+      <img className="about__banner" src={bannerImg} alt="banner" />
       <div className="about__content">
         <Dropdown title="Fiabilité">
           <p>

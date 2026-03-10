@@ -19,11 +19,15 @@
   }
 
   &__arrow {
+    width: clamp(16px, 4vw, 24px);
+    max-width: 24px;
+    height: clamp(9px, 4vw, 13px);
+    max-height: 13px;
     transition: transform 0.3s ease;
+  }
 
-    &__open {
-      transform: rotate(180deg);
-    }
+  &__arrow--open {
+    transform: rotate(180deg);
   }
 
   &__content {
