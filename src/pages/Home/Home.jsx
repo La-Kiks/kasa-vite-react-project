@@ -5,12 +5,19 @@ import bannerImg from "../../assets/banner-cliff-beach.png";
 
 function Home() {
   const [housings, setHousings] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch("/logements.json")
-      .then((res) => res.json())
-      .then((data) => setHousings(data));
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch");
+        return res.json();
+      })
+      .then((data) => setHousings(data))
+      .catch(() => setError(true));
   }, []);
+
+  if (error) return <Navigate to="/404" replace />;
 
   return (
     <div className="home">
