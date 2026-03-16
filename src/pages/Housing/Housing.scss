@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
+    gap: 1rem;
   }
 
   &__info {
@@ -42,6 +43,7 @@
   &__tags {
     display: flex;
     justify-content: start;
+    align-items: center;
     gap: 10px;
   }
 

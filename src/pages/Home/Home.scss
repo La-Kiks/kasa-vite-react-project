@@ -51,7 +51,7 @@
 
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     overflow-y: auto;
-    max-height: calc((340px * 2) + (50px * 2) + 50px);
+    //  max-height: calc((340px * 2) + (50px * 2) + 50px);
     justify-items: center;
     margin: auto;
 
@@ -73,7 +73,7 @@
 
     &__grid {
       background-color: $light-color;
-      max-height: calc((255px * 3) + (10px * 4));
+      // max-height: calc((255px * 3) + (10px * 4));
     }
   }
 }
