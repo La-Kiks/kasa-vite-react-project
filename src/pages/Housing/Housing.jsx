@@ -43,7 +43,12 @@ function Housing() {
     return <Navigate to="/404" replace />;
   }
 
-  if (!housing) return <p>Loading...</p>;
+  if (!housing)
+    return (
+      <div className="housing">
+        <div className="housing__loading">Chargement...</div>
+      </div>
+    );
 
   return (
     <div className="housing">
