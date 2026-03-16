@@ -1,4 +1,4 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, useLocation, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Carousel from "../../components/Carousel/Carousel";
@@ -9,11 +9,16 @@ import "./Housing.scss";
 
 function Housing() {
   const { id } = useParams();
+  const { state } = useLocation();
 
-  const [housing, setHousing] = useState(null);
+  const [housing, setHousing] = useState(state?.housing || null);
   const [error, setError] = useState(false);
 
+  const needsFetch = !state?.housing;
+
   useEffect(() => {
+    if (!needsFetch) return;
+
     fetch("/logements.json")
       .then((res) => {
         if (!res.ok) {
@@ -32,7 +37,7 @@ function Housing() {
       .catch(() => {
         setError(true);
       });
-  }, [id]);
+  }, [needsFetch, id]);
 
   if (error) {
     return <Navigate to="/404" replace />;

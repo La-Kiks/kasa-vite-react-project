@@ -3,7 +3,11 @@ import "./HousingCard.scss";
 
 function HousingCard({ housing }) {
   return (
-    <Link to={`/housing/${housing.id}`} className="housing-card">
+    <Link
+      to={`/housing/${housing.id}`}
+      state={{ housing }}
+      className="housing-card"
+    >
       <img
         src={housing.cover}
         alt={housing.title}
